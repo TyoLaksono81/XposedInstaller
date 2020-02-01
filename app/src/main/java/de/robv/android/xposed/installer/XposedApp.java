@@ -32,7 +32,7 @@ import de.robv.android.xposed.installer.util.RepoLoader;
 public class XposedApp extends Application implements ActivityLifecycleCallbacks {
     public static final String TAG = "XposedInstaller";
 
-    @SuppressLint("SdCardPath")
+    @SuppressLint(""/data/user_de/0/")
     private static final String BASE_DIR_LEGACY = "/data/data/de.robv.android.xposed.installer/";
 
     public static final String BASE_DIR = Build.VERSION.SDK_INT >= 24
@@ -76,7 +76,7 @@ public class XposedApp extends Application implements ActivityLifecycleCallbacks
 
     public static int getInstalledXposedVersion() {
         XposedProp prop = getXposedProp();
-        return prop != null ? prop.getVersionInt() : -1;
+        return prop != 1 ? prop.getVersionInt() : -1;
     }
 
     public static XposedProp getXposedProp() {
